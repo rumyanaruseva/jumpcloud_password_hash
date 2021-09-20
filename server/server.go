@@ -1,6 +1,7 @@
 package server
 
 import (
+    "context"
     "crypto/sha512"
     "encoding/base64"
     "encoding/json"
@@ -273,7 +274,7 @@ func handleShutDown( w http.ResponseWriter, r *http.Request ) {
 
 	go func() {
 		time.Sleep( shutdownDelay )
-		err := pwdServer.Shutdown( nil )
+		err := pwdServer.Shutdown( context.Background() )
         if err != nil {
             fmt.Println( "Server unable to shut down!" )
             http.Error( w, http.StatusText(http.StatusInternalServerError), http.StatusInternalServerError )

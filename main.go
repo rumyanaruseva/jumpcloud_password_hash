@@ -1,12 +1,16 @@
 package main
 
 import (
+	"flag"
 	"log"
-	server "jumpcloud_takehome/server"
+	server "jumpcloud_password_hash/server"
 )
 
 func main() {
-	log.Printf("Starting server on port 8080")
-	server.HandleRequests(8080)
-	log.Printf("Service has shutdown")
+
+	port := flag.Int( "port", 8080, "Port to listen on" )
+	flag.Parse()
+
+	log.Printf( "Starting server on port %d!", *port )
+	server.HandleRequests( *port )
 }
