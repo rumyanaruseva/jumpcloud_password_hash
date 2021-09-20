@@ -22,4 +22,4 @@ A simple REST http server that listens on a given port and encodes a password. P
 
 ## Notes
 
-- Build with Go 1.17 on Windows
+- I used Go 1.17 on Windows
