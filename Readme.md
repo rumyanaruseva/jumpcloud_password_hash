@@ -1,7 +1,7 @@
 
 # JumpCloud Hash and Encode a Password String
 
-A simple REST http server that listens on a given port. Provides the following endpoints:
+A simple REST http server that listens on a given port and encodes a password. Provides the following endpoints:
 
 ## Endpoints
 
